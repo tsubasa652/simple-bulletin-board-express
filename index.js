@@ -23,9 +23,7 @@ app.get('/', (req, res) => {
 
 app.post('/post', (req, res) => {
   try{
-    console.log(req.body)
     const keys = Object.keys(req.body)
-    console.log(keys)
     if(!keys.includes("name") || !keys.includes("body") || req.body["name"] == "" || req.body.body == ""){
       throw new Error("名前または本文が入力されていません")
     }
